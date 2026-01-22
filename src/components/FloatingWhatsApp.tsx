@@ -1,27 +1,21 @@
-import { MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 const FloatingWhatsApp = () => {
-  const whatsappLink = "https://wa.me/5500000000000?text=Olá! Vim pelo site e gostaria de saber mais sobre seus serviços.";
+  const whatsappLink = "https://wa.me/5518996904225?text=Olá! Preciso de ajuda.";
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 animate-float">
-      <Button
-        variant="whatsapp"
-        size="lg"
-        className="rounded-full w-14 h-14 sm:w-16 sm:h-16 p-0 shadow-2xl hover:scale-110 transition-transform duration-300"
-        asChild
-      >
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Falar no WhatsApp"
-        >
-          <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8" />
-        </a>
-      </Button>
-    </div>
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-glow group"
+      aria-label="Fale Conosco"
+    >
+      <i className="bi bi-whatsapp text-2xl text-white"></i>
+
+      {/* Tooltip */}
+      <span className="absolute right-full mr-3 px-3 py-2 bg-foreground text-background text-sm font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+        Fale Conosco
+      </span>
+    </a>
   );
 };
 

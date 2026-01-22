@@ -1,4 +1,3 @@
-import { Wifi, Zap, Shield, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -24,7 +23,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center animate-slide-up">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-muted/50 backdrop-blur-sm border border-primary/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
-            <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+            <i className="bi bi-lightning-charge-fill text-primary"></i>
             <span className="text-xs sm:text-sm font-medium text-primary">Internet de Alta Velocidade</span>
           </div>
 
@@ -49,7 +48,7 @@ const HeroSection = () => {
             </Button>
             <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                <MessageCircle className="w-5 h-5" />
+                <i className="bi bi-whatsapp"></i>
                 Solicitar Atendimento
               </a>
             </Button>
@@ -58,15 +57,15 @@ const HeroSection = () => {
           {/* Features */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 max-w-3xl mx-auto px-2">
             {[
-              { icon: Wifi, label: "Conexão Estável" },
-              { icon: Zap, label: "Alta Velocidade" },
-              { icon: Shield, label: "Suporte 24h" },
+              { icon: "bi-wifi", label: "Conexão Estável" },
+              { icon: "bi-lightning-charge", label: "Alta Velocidade" },
+              { icon: "bi-shield-check", label: "Suporte 24h" },
             ].map((feature) => (
               <div
                 key={feature.label}
-                className="flex items-center justify-center gap-2 sm:gap-3 bg-muted/30 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-border/50"
+                className="flex items-center justify-center gap-2 sm:gap-3 glass rounded-lg p-3 sm:p-4"
               >
-                <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                <i className={`bi ${feature.icon} text-primary text-xl`}></i>
                 <span className="font-medium text-sm sm:text-base">{feature.label}</span>
               </div>
             ))}
