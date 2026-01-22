@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Alternativa Internet" className="h-24 w-auto" />
+            <img src={logo} alt="Alternativa Internet" className="h-16 md:h-20 lg:h-24 w-auto transition-all duration-300" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -56,11 +56,11 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <i className={`bi ${isMenuOpen ? 'bi-x-lg' : 'bi-list'} text-2xl`}></i>
+            <i className={`bi ${isMenuOpen ? 'bi-x-lg' : 'bi-list'} text-3xl text-primary`}></i>
           </button>
         </div>
 

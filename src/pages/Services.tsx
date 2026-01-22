@@ -86,18 +86,18 @@ const Services = () => {
             {/* Services Grid */}
             <section className="py-16 md:py-24 bg-background">
                 <div className="container mx-auto px-4 sm:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {services.map((service, index) => (
                             <div
                                 key={index}
                                 className="glass-card rounded-2xl p-6 md:p-8 hover-lift animate-fade-in-up"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
-                                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                                    <i className={`bi ${service.icon} text-3xl text-primary`}></i>
+                                <div className="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                                    <i className={`bi ${service.icon} text-2xl md:text-3xl text-primary`}></i>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                                <p className="text-muted-foreground mb-6 leading-relaxed">
+                                <h3 className="text-xl md:text-2xl font-bold mb-3">{service.title}</h3>
+                                <p className="text-muted-foreground text-sm md:text-base mb-6 leading-relaxed">
                                     {service.description}
                                 </p>
                                 <ul className="space-y-2">
@@ -123,7 +123,7 @@ const Services = () => {
                                 Para Residências
                             </span>
                             <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
-                                Internet para <span className="text-gradient-gold">Sua Casa</span>
+                                Internet para <span className="text-gradient-gold block md:inline">Sua Casa</span>
                             </h2>
                             <p className="text-muted-foreground text-lg mb-6">
                                 Conexão perfeita para toda a família curtir streaming, jogos online, trabalho remoto e muito mais.
@@ -136,10 +136,10 @@ const Services = () => {
                                     { icon: "bi-phone", text: "Wi-Fi para todos os dispositivos" }
                                 ].map((item, idx) => (
                                     <li key={idx} className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                                             <i className={`bi ${item.icon} text-primary`}></i>
                                         </div>
-                                        <span className="font-medium">{item.text}</span>
+                                        <span className="font-medium text-sm md:text-base">{item.text}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -201,7 +201,7 @@ const Services = () => {
                                 Para Empresas
                             </span>
                             <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
-                                Soluções <span className="text-gradient-gold">Corporativas</span>
+                                Soluções <span className="text-gradient-gold block md:inline">Corporativas</span>
                             </h2>
                             <p className="text-muted-foreground text-lg mb-6">
                                 Internet de alta performance com SLA garantido, suporte dedicado e infraestrutura robusta para o seu negócio.

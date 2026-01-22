@@ -106,14 +106,15 @@ const Plans = () => {
                                     </div>
                                 )}
 
+
                                 <div className="text-center mb-6">
-                                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-                                        <i className={`bi ${plan.icon} text-2xl text-primary`}></i>
+                                    <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full mb-4">
+                                        <i className={`bi ${plan.icon} text-xl md:text-2xl text-primary`}></i>
                                     </div>
-                                    <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                                    <div className="text-4xl font-bold text-gradient-gold mb-1">{plan.speed} Mega</div>
+                                    <h3 className="text-lg md:text-xl font-bold mb-2">{plan.name}</h3>
+                                    <div className="text-3xl md:text-4xl font-bold text-gradient-gold mb-1">{plan.speed} Mega</div>
                                     <p className="text-muted-foreground text-sm">
-                                        <span className="text-2xl font-bold text-foreground">R$ {plan.price}</span>/mês
+                                        <span className="text-xl md:text-2xl font-bold text-foreground">R$ {plan.price}</span>/mês
                                     </p>
                                 </div>
 
@@ -146,10 +147,10 @@ const Plans = () => {
             <section className="py-20 bg-navy-dark">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        <h2 className="text-2xl md:text-3xl md:text-4xl font-bold mb-4">
                             Compare os <span className="text-gradient-gold">Planos</span>
                         </h2>
-                        <p className="text-muted-foreground text-lg">
+                        <p className="text-muted-foreground text-base md:text-lg">
                             Veja todos os detalhes e escolha o melhor para você
                         </p>
                     </div>

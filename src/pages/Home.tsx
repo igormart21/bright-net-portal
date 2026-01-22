@@ -35,26 +35,26 @@ const Home = () => {
                         </div>
 
                         {/* Headline Poderoso */}
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight animate-fade-in-up">
                             A Internet que você{" "}
-                            <span className="text-gradient-gold">Merece</span>
-                            <br />
-                            está aqui!
+                            <span className="text-gradient-gold block sm:inline">Merece</span>
+                            <span className="block">está aqui!</span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+
+                        <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
                             Conexão ultra-rápida e estável para sua casa ou empresa. Streaming em 4K, gaming sem lag e trabalho remoto sem preocupações.
                         </p>
 
                         {/* CTAs Premium */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                            <Link to="/planos">
-                                <Button variant="hero" size="lg" className="text-lg px-8 py-6 hover-glow">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 md:mb-16 animate-fade-in-up px-4" style={{ animationDelay: '0.4s' }}>
+                            <Link to="/planos" className="w-full sm:w-auto">
+                                <Button variant="hero" size="lg" className="text-base md:text-lg px-8 py-6 hover-glow w-full sm:w-auto">
                                     <i className="bi bi-rocket-takeoff-fill mr-2"></i>
                                     Ver Planos
                                 </Button>
                             </Link>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
+                            <Button variant="outline" size="lg" className="text-base md:text-lg px-8 py-6 w-full sm:w-auto" asChild>
                                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                                     <i className="bi bi-whatsapp mr-2"></i>
                                     Falar com Consultor

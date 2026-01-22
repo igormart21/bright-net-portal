@@ -21,7 +21,7 @@ const PageHero = ({
     icon
 }: PageHeroProps) => {
     return (
-        <section className="relative py-24 md:py-32 overflow-hidden">
+        <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
             {/* Background */}
             {backgroundImage ? (
                 <>

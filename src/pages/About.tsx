@@ -15,7 +15,7 @@ const About = () => {
             {/* Mission, Vision, Values */}
             <section className="py-16 md:py-24 bg-background">
                 <div className="container mx-auto px-4 sm:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                         {[
                             {
                                 icon: "bi-bullseye",
@@ -33,12 +33,12 @@ const About = () => {
                                 text: "Compromisso, transparência, inovação, respeito ao cliente e responsabilidade social."
                             }
                         ].map((item, idx) => (
-                            <div key={idx} className="glass-card rounded-2xl p-8 text-center hover-lift">
-                                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
-                                    <i className={`bi ${item.icon} text-3xl text-primary`}></i>
+                            <div key={idx} className="glass-card rounded-2xl p-6 md:p-8 text-center hover-lift">
+                                <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full mb-4 md:mb-6">
+                                    <i className={`bi ${item.icon} text-2xl md:text-3xl text-primary`}></i>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed">{item.text}</p>
+                                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">{item.title}</h3>
+                                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{item.text}</p>
                             </div>
                         ))}
                     </div>
@@ -117,7 +117,7 @@ const About = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         {[
                             {
                                 icon: "bi-hdd-network",
@@ -141,8 +141,8 @@ const About = () => {
                             }
                         ].map((item, idx) => (
                             <div key={idx} className="glass-card rounded-xl p-6 text-center hover-lift">
-                                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-4">
-                                    <i className={`bi ${item.icon} text-2xl text-primary`}></i>
+                                <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-primary/10 rounded-full mb-3 md:mb-4">
+                                    <i className={`bi ${item.icon} text-xl md:text-2xl text-primary`}></i>
                                 </div>
                                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                                 <p className="text-muted-foreground text-sm">{item.description}</p>
@@ -195,14 +195,14 @@ const About = () => {
                         </p>
 
                         <div className="glass-card rounded-2xl p-8 md:p-12 mb-8">
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
                                 {[
                                     "Centro", "Bairro Alto", "Jardim Primavera", "Vila Nova",
                                     "Parque das Flores", "São José", "Industrial", "Nova Esperança"
                                 ].map((area, idx) => (
                                     <div key={idx} className="flex items-center gap-2">
                                         <i className="bi bi-geo-alt-fill text-primary"></i>
-                                        <span className="text-foreground/90">{area}</span>
+                                        <span className="text-foreground/90 text-sm md:text-base">{area}</span>
                                     </div>
                                 ))}
                             </div>
