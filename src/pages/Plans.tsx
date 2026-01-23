@@ -10,7 +10,7 @@ const Plans = () => {
             name: "Start",
             speed: "420",
             price: "89,90",
-            icon: "bi-lightning-charge-fill",
+            icon: "bi-lightning-fill",
             recommended: false,
             features: [
                 "Download até 420 Mbps",
@@ -58,7 +58,7 @@ const Plans = () => {
             name: "Ultra",
             speed: "820",
             price: "179,90",
-            icon: "bi-lightning-fill",
+            icon: "bi-gem",
             recommended: false,
             features: [
                 "Download até 820 Mbps",
@@ -89,18 +89,18 @@ const Plans = () => {
             {/* Plans Grid */}
             <section className="py-20 bg-background">
                 <div className="container mx-auto px-4 sm:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[90rem] mx-auto">
                         {plans.map((plan, idx) => (
                             <div
                                 key={idx}
-                                className={`relative bg-gradient-card border rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 ${plan.recommended
-                                    ? "border-primary shadow-gold lg:scale-105"
-                                    : "border-border hover:border-primary/50 shadow-card"
+                                className={`relative flex flex-col h-full rounded-3xl transition-all duration-500 p-8 ${plan.recommended
+                                    ? "bg-gradient-to-b from-navy-light to-navy-dark border-2 border-primary shadow-[0_0_50px_rgba(255,193,7,0.2)] z-10"
+                                    : "bg-glass border-2 border-transparent border-white/5 hover:border-primary/30 hover:bg-navy-light/50 opacity-90 hover:opacity-100"
                                     }`}
                             >
                                 {plan.recommended && (
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                        <span className="bg-gradient-gold text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-lg">
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-full text-center">
+                                        <span className="bg-gradient-gold text-navy-dark font-extrabold text-xs px-6 py-2 rounded-full uppercase tracking-wider shadow-lg animate-pulse-glow">
                                             🔥 Mais Popular
                                         </span>
                                     </div>
@@ -108,32 +108,32 @@ const Plans = () => {
 
 
                                 <div className="text-center mb-6">
-                                    <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full mb-4">
-                                        <i className={`bi ${plan.icon} text-xl md:text-2xl text-primary`}></i>
+                                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${plan.recommended ? 'bg-primary/20' : 'bg-white/5'}`}>
+                                        <i className={`bi ${plan.icon} text-3xl ${plan.recommended ? 'text-primary' : 'text-foreground/70'}`}></i>
                                     </div>
-                                    <h3 className="text-lg md:text-xl font-bold mb-2">{plan.name}</h3>
-                                    <div className="text-3xl md:text-4xl font-bold text-gradient-gold mb-1">{plan.speed} Mega</div>
+                                    <h3 className={`text-xl font-bold mb-2 uppercase tracking-wide ${plan.recommended ? 'text-primary' : 'text-foreground/70'}`}>{plan.name}</h3>
+                                    <div className="text-4xl lg:text-5xl font-black text-gradient-gold mb-1">{plan.speed} Mega</div>
                                     <p className="text-muted-foreground text-sm">
-                                        <span className="text-xl md:text-2xl font-bold text-foreground">R$ {plan.price}</span>/mês
+                                        <span className="text-2xl font-bold text-foreground">R$ {plan.price}</span>/mês
                                     </p>
                                 </div>
 
-                                <ul className="space-y-3 mb-6">
+                                <ul className="space-y-3 mb-8 flex-grow">
                                     {plan.features.map((feature, fIdx) => (
-                                        <li key={fIdx} className="flex items-start gap-2 text-sm">
-                                            <i className="bi bi-check-circle-fill text-primary flex-shrink-0 mt-0.5"></i>
-                                            <span>{feature}</span>
+                                        <li key={fIdx} className="flex items-start gap-3 text-sm">
+                                            <i className={`bi bi-check-circle-fill flex-shrink-0 mt-0.5 ${plan.recommended ? 'text-primary' : 'text-primary/70'}`}></i>
+                                            <span className="font-medium text-foreground/90">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
 
                                 <Button
                                     variant={plan.recommended ? "hero" : "outline"}
-                                    className="w-full"
+                                    className={`w-full py-6 text-base font-bold rounded-xl mt-auto ${plan.recommended ? 'hover-glow shadow-gold' : 'hover:bg-primary/10 hover:text-primary hover:border-primary/50'}`}
                                     asChild
                                 >
                                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                                        <i className="bi bi-whatsapp mr-2"></i>
+                                        <i className="bi bi-whatsapp mr-2 text-lg"></i>
                                         Contratar
                                     </a>
                                 </Button>
@@ -210,18 +210,15 @@ const Plans = () => {
                                 </tr>
                                 <tr>
                                     <td className="p-4 font-medium">IP Fixo</td>
-                                    <td className="text-center p-4">
-                                        <i className="bi bi-dash text-muted-foreground"></i>
-                                    </td>
-                                    <td className="text-center p-4">
-                                        <i className="bi bi-dash text-muted-foreground"></i>
-                                    </td>
-                                    <td className="text-center p-4">
-                                        <i className="bi bi-check-circle-fill text-primary"></i>
-                                    </td>
-                                    <td className="text-center p-4">
-                                        <i className="bi bi-check-circle-fill text-primary"></i>
-                                    </td>
+                                    {plans.map((plan, idx) => (
+                                        <td key={idx} className="text-center p-4">
+                                            {plan.name === "Start" || plan.name === "Plus" ? (
+                                                <i className="bi bi-dash text-muted-foreground"></i>
+                                            ) : (
+                                                <i className="bi bi-check-circle-fill text-primary"></i>
+                                            )}
+                                        </td>
+                                    ))}
                                 </tr>
                             </tbody>
                         </table>

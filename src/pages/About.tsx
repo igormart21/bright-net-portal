@@ -191,18 +191,30 @@ const About = () => {
                             Área de <span className="text-gradient-gold">Cobertura</span>
                         </h2>
                         <p className="text-muted-foreground text-lg mb-8">
-                            Atendemos diversos bairros e estamos sempre expandindo nossa cobertura
+                            Atendemos diversos bairros em Araçatuba e estamos sempre expandindo.
+                            <br />
+                            <span className="font-semibold text-primary">Cobertura total de 88% da cidade</span>, incluindo condomínios fechados.
                         </p>
 
                         <div className="glass-card rounded-2xl p-8 md:p-12 mb-8">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-left">
                                 {[
-                                    "Centro", "Bairro Alto", "Jardim Primavera", "Vila Nova",
-                                    "Parque das Flores", "São José", "Industrial", "Nova Esperança"
+                                    "Moradas dos Nobres",
+                                    "Jardim Algo Azul",
+                                    "Jardim Moreira",
+                                    "Clóvis Valentim Picolotto",
+                                    "Claudionor Cinti",
+                                    "Jussara",
+                                    "Esplanada",
+                                    "Residencial Paquere",
+                                    "Residencial Aimoré",
+                                    "Chácaras Aguiar",
+                                    "Chácaras Osakas",
+                                    "Chácara de Recreio"
                                 ].map((area, idx) => (
                                     <div key={idx} className="flex items-center gap-2">
                                         <i className="bi bi-geo-alt-fill text-primary"></i>
-                                        <span className="text-foreground/90 text-sm md:text-base">{area}</span>
+                                        <span className="text-foreground/90 text-sm md:text-base capitalize">{area}</span>
                                     </div>
                                 ))}
                             </div>

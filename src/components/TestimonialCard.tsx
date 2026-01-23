@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ name, location, rating, text, avatar }: TestimonialCardProps) => {
     return (
-        <div className="glass-card rounded-2xl p-6 md:p-8 hover-lift">
+        <div className="glass-card rounded-2xl p-6 md:p-8 hover-lift h-full flex flex-col">
             {/* Rating Stars */}
             <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, index) => (
@@ -20,13 +20,13 @@ const TestimonialCard = ({ name, location, rating, text, avatar }: TestimonialCa
             </div>
 
             {/* Testimonial Text */}
-            <p className="text-foreground/90 mb-6 leading-relaxed italic">
+            <p className="text-foreground/90 mb-6 leading-relaxed italic flex-grow">
                 "{text}"
             </p>
 
             {/* Author Info */}
-            <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+            <div className="flex items-center gap-3 mt-auto">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden flex-shrink-0">
                     {avatar ? (
                         <img src={avatar} alt={name} className="w-full h-full object-cover" />
                     ) : (

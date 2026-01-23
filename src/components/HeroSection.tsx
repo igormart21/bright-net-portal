@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100svh] flex items-center justify-center pt-20 pb-8 md:pb-0 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-start md:justify-center pt-52 md:pt-32 pb-12 md:pb-0 overflow-hidden"
     >
       {/* Background Image */}
       <div
@@ -19,24 +19,26 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-hero" />
 
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center animate-slide-up">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 mt-8 md:mt-0">
+        <div className="max-w-4xl mx-auto text-center md:animate-slide-up">
+          {/* Mobile Spacer - pushes content below navbar */}
+          <div className="h-40 md:h-0" aria-hidden="true"></div>
+
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-muted/50 backdrop-blur-sm border border-primary/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
+          <div className="hidden md:inline-flex items-center gap-2 bg-muted/50 backdrop-blur-sm border border-primary/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
             <i className="bi bi-lightning-charge-fill text-primary"></i>
-            <span className="text-xs sm:text-sm font-medium text-primary">Internet de Alta Velocidade</span>
+            <span className="text-xs sm:text-sm font-medium text-primary">A Internet Mais Rápida da Região</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2">
-            Conecte-se ao <span className="text-gradient-gold">Futuro</span> com a{" "}
-            <span className="text-gradient-gold">Alternativa</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
+            A Internet que você <br />
+            <span className="text-gradient-gold">Merece</span> está aqui!
           </h1>
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-            Internet banda larga de alta velocidade, estável e confiável para sua casa ou empresa.
-            Streaming, jogos e trabalho sem interrupções.
+            Conexão ultra-rápida e estável para sua casa ou empresa. Streaming em 4K, gaming sem lag e trabalho remoto sem preocupações.
           </p>
 
           {/* CTA Buttons */}

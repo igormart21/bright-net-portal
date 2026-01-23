@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import StatsCard from "@/components/StatsCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import heroBg from "@/assets/hero-bg.jpg";
+import strategyImg from "@/assets/strategy-section.jpg";
+import gamerImg from "@/assets/gamer-section.jpg";
 
 const Home = () => {
     const whatsappLink = "https://wa.me/5518996904225?text=Olá! Gostaria de saber mais sobre os planos de internet.";
@@ -10,7 +12,7 @@ const Home = () => {
     return (
         <div className="min-h-screen">
             {/* Hero Section - Novo Design Premium com Imagem */}
-            <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-screen flex flex-col items-center justify-start md:justify-center pt-44 md:pt-0 pb-12 md:pb-0 overflow-hidden">
                 {/* Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -26,10 +28,10 @@ const Home = () => {
                     <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
                 </div>
 
-                <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-20">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-0">
                     <div className="max-w-5xl mx-auto text-center">
                         {/* Badge Premium */}
-                        <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8 animate-scale-in">
+                        <div className="hidden md:inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8 animate-scale-in">
                             <i className="bi bi-award-fill text-primary text-xl"></i>
                             <span className="font-semibold text-primary">A Internet Mais Rápida da Região</span>
                         </div>
@@ -132,7 +134,7 @@ const Home = () => {
                             {
                                 icon: "bi-wifi",
                                 title: "Fibra Óptica 100%",
-                                description: "Tecnologia GPON de última geração para velocidade e estabilidade máximas.",
+                                description: "Tecnologia XGPON de última geração para velocidade e estabilidade máximas.",
                                 color: "primary"
                             },
                             {
@@ -182,9 +184,156 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Strategic Lifestyle Section */}
+            <section className="py-20 md:py-28 bg-background overflow-hidden relative">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+                        {/* Image Side */}
+                        <div className="w-full lg:w-1/2 relative animate-fade-in-left">
+                            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-primary/20">
+                                <img
+                                    src={strategyImg}
+                                    alt="Estilo de vida digital com internet rápida"
+                                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                                />
+                                {/* Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-transparent to-transparent"></div>
+
+                                {/* Floating Badge */}
+                                <div className="absolute bottom-8 left-8 bg-glass-dark backdrop-blur-md p-4 rounded-2xl border border-white/10 animate-float">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                                            <i className="bi bi-wifi text-green-400 text-2xl"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-white font-bold">Conexão Estável</div>
+                                            <div className="text-white/60 text-sm">Ideal para Home Office</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Decorative Elements */}
+                            <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+                            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl -z-10"></div>
+                        </div>
+
+                        {/* Content Side */}
+                        <div className="w-full lg:w-1/2 animate-fade-in-right">
+                            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Liberdade Digital</span>
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6 leading-tight">
+                                Modernize sua <span className="text-gradient-gold">Vida Digital</span>
+                            </h2>
+                            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                                Transforme sua casa em um verdadeiro escritório do futuro. Com nossa conexão ultra-estável, você tem a liberdade de trabalhar, se divertir e gerenciar suas finanças online com total tranquilidade.
+                            </p>
+
+                            <ul className="space-y-6 mb-10">
+                                {[
+                                    { title: "Home Office Sem Interrupções", desc: "Videoconferências em HD sem travar, garantindo sua produtividade.", icon: "bi-laptop" },
+                                    { title: "Entretenimento em 4K", desc: "Streaming de filmes e jogos online com ping baixo e alta definição.", icon: "bi-controller" },
+                                    { title: "Facilidade no Dia a Dia", desc: "Pague contas, faça transferências e acesse serviços bancários num piscar de olhos.", icon: "bi-phone" }
+                                ].map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-4 group">
+                                        <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                                            <i className={`bi ${item.icon} text-xl text-primary`}></i>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-lg">{item.title}</h3>
+                                            <p className="text-muted-foreground text-sm">{item.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <Button variant="hero" size="lg" className="hover-glow w-full sm:w-auto" asChild>
+                                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                                    <i className="bi bi-arrow-right-circle mr-2"></i>
+                                    Quero Modernizar Agora
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Gaming Strategic Section */}
+            <section className="py-20 md:py-28 bg-navy-dark overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24">
+                        {/* Image Side */}
+                        <div className="w-full lg:w-1/2 relative animate-fade-in-right">
+                            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-primary/20">
+                                <img
+                                    src={gamerImg}
+                                    alt="Setup gamer com cadeira e luzes neon"
+                                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                                />
+                                {/* Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-transparent to-transparent"></div>
+
+                                {/* Floating Badge */}
+                                <div className="absolute bottom-8 right-8 bg-glass-dark backdrop-blur-md p-4 rounded-2xl border border-white/10 animate-pulse">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                                            <i className="bi bi-joystick text-primary text-2xl"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-white font-bold">Modo Gamer</div>
+                                            <div className="text-white/60 text-sm">Ping Ultra Baixo</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Content Side */}
+                        <div className="w-full lg:w-1/2 animate-fade-in-left">
+                            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Performance Extrema</span>
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6 leading-tight text-white">
+                                Potência Máxima para <span className="text-gradient-gold">Gamers</span>
+                            </h2>
+                            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                                Domine as partidas com nossa conexão direta com as melhores plataformas e servidores do mundo. Experimente a vantagem competitiva de jogar com estabilidade total e latência mínima.
+                            </p>
+
+                            <ul className="space-y-6 mb-10">
+                                {[
+                                    { title: "Ping Baixo e Estável", desc: "Rotas otimizadas para os principais servidores de jogos.", icon: "bi-speedometer" },
+                                    { title: "Wi-Fi 6 de Alta Performance", desc: "Roteadores de última geração para jogar via wireless sem lag.", icon: "bi-wifi" },
+                                    { title: "Até 1 Giga de Velocidade", desc: "Downloads de atualizações pesadas em questão de segundos.", icon: "bi-lightning-charge" }
+                                ].map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-4 group">
+                                        <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                                            <i className={`bi ${item.icon} text-xl text-primary`}></i>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-lg text-white">{item.title}</h3>
+                                            <p className="text-muted-foreground text-sm">{item.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <Button variant="hero" size="lg" className="hover-glow w-full sm:w-auto" asChild>
+                                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                                    <i className="bi bi-controller mr-2"></i>
+                                    Quero Jogar sem Lag
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Planos em Destaque */}
-            <section className="py-20 md:py-28 bg-background">
-                <div className="container mx-auto px-4 sm:px-6">
+            <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+                {/* Decorative Blobs */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <div className="text-center mb-16">
                         <span className="text-primary font-semibold text-sm uppercase tracking-wider">Planos Populares</span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
@@ -195,25 +344,28 @@ const Home = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[90rem] mx-auto mb-12">
                         {[
                             {
                                 name: "Start",
                                 speed: "420 Mega",
-                                price: "R$ 89,90/mês",
+                                price: "R$ 89,90",
+                                period: "/mês",
                                 icon: "bi-lightning-fill",
                                 features: [
                                     "Download até 420 Mbps",
                                     "Upload até 210 Mbps",
                                     "Wi-Fi 6 incluso",
                                     "Instalação grátis",
-                                    "Suporte técnico 24/7"
+                                    "Suporte técnico 24/7",
+                                    "Fibra óptica 100%"
                                 ]
                             },
                             {
                                 name: "Plus",
                                 speed: "520 Mega",
-                                price: "R$ 99,90/mês",
+                                price: "R$ 99,90",
+                                period: "/mês",
                                 icon: "bi-star-fill",
                                 popular: true,
                                 features: [
@@ -222,13 +374,15 @@ const Home = () => {
                                     "Wi-Fi 6 incluso",
                                     "Instalação grátis",
                                     "Suporte prioritário 24/7",
-                                    "Fibra óptica 100%"
+                                    "Fibra óptica 100%",
+                                    "Garantia de velocidade"
                                 ]
                             },
                             {
                                 name: "Premium",
                                 speed: "620 Mega",
-                                price: "R$ 119,90/mês",
+                                price: "R$ 119,90",
+                                period: "/mês",
                                 icon: "bi-rocket-takeoff-fill",
                                 features: [
                                     "Download até 620 Mbps",
@@ -237,51 +391,78 @@ const Home = () => {
                                     "Instalação grátis",
                                     "Suporte VIP 24/7",
                                     "Fibra óptica 100%",
-                                    "IP Fixo disponível"
+                                    "IP Fixo disponível",
+                                    "Garantia de velocidade"
+                                ]
+                            },
+                            {
+                                name: "Ultra",
+                                speed: "820 Mega",
+                                price: "R$ 179,90",
+                                period: "/mês",
+                                icon: "bi-gem",
+                                features: [
+                                    "Download até 820 Mbps",
+                                    "Upload até 410 Mbps",
+                                    "Wi-Fi 6 incluso",
+                                    "Instalação grátis",
+                                    "Suporte VIP 24/7",
+                                    "Fibra óptica 100%",
+                                    "IP Fixo incluso",
+                                    "Garantia de velocidade",
+                                    "Prioridade máxima"
                                 ]
                             }
                         ].map((plan, idx) => (
                             <div
                                 key={idx}
-                                className={`relative bg-gradient-card border rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 ${plan.popular
-                                    ? "border-primary shadow-gold lg:scale-105"
-                                    : "border-border hover:border-primary/50 shadow-card"
+                                className={`relative flex flex-col h-full rounded-3xl transition-all duration-500 p-8 ${plan.popular
+                                    ? "bg-gradient-to-b from-navy-light to-navy-dark border-2 border-primary shadow-[0_0_50px_rgba(255,193,7,0.2)] z-10"
+                                    : "bg-glass border-2 border-transparent border-white/5 hover:border-primary/30 hover:bg-navy-light/50 opacity-90 hover:opacity-100"
                                     }`}
                             >
                                 {plan.popular && (
-                                    <div className="absolute -top-5 left-1/2 -translate-x-1/2">
-                                        <span className="bg-gradient-gold text-primary-foreground text-sm font-bold px-6 py-2 rounded-full uppercase tracking-wide shadow-lg">
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-full text-center">
+                                        <span className="bg-gradient-gold text-navy-dark font-extrabold text-xs px-6 py-2 rounded-full uppercase tracking-wider shadow-lg animate-pulse-glow">
                                             🔥 Mais Vendido
                                         </span>
                                     </div>
                                 )}
 
-                                <div className="text-center mb-8">
-                                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6">
-                                        <i className={`bi ${plan.icon} text-3xl text-primary`}></i>
+                                <div className="text-center mb-6 border-b border-white/10 pb-6">
+                                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${plan.popular ? 'bg-primary/20' : 'bg-white/5'}`}>
+                                        <i className={`bi ${plan.icon} text-3xl ${plan.popular ? 'text-primary' : 'text-foreground/70'}`}></i>
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
-                                    <div className="text-5xl font-bold text-gradient-gold mb-2">{plan.speed}</div>
-                                    <p className="text-muted-foreground">{plan.price}</p>
+                                    <h3 className={`text-xl font-bold mb-2 uppercase tracking-wide ${plan.popular ? 'text-primary' : 'text-foreground/70'}`}>{plan.name}</h3>
+                                    <div className="flex items-center justify-center gap-1 mb-2">
+                                        <span className={`text-5xl font-black ${plan.popular ? 'text-gradient-gold' : 'text-foreground'}`}>
+                                            {plan.speed.split(' ')[0]}
+                                        </span>
+                                        <span className="text-lg font-medium text-muted-foreground self-end mb-2">Mega</span>
+                                    </div>
+                                    <div className="flex items-center justify-center gap-1 text-muted-foreground">
+                                        <span className="text-2xl font-bold text-foreground">{plan.price}</span>
+                                        <span className="text-sm">{plan.period}</span>
+                                    </div>
                                 </div>
 
-                                <ul className="space-y-4 mb-8">
+                                <ul className="space-y-3 mb-8 flex-grow text-sm">
                                     {plan.features.map((feature, fIdx) => (
                                         <li key={fIdx} className="flex items-start gap-3">
-                                            <i className="bi bi-check-circle-fill text-primary flex-shrink-0 mt-1"></i>
-                                            <span className="text-foreground/90">{feature}</span>
+                                            <i className={`bi bi-check-circle-fill flex-shrink-0 mt-0.5 ${plan.popular ? 'text-primary' : 'text-primary/70'}`}></i>
+                                            <span className="text-foreground/90 font-medium">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
 
                                 <Button
                                     variant={plan.popular ? "hero" : "outline"}
-                                    className="w-full text-lg py-6"
+                                    className={`w-full py-6 text-base font-bold rounded-xl mt-auto ${plan.popular ? 'hover-glow shadow-gold' : 'hover:bg-primary/10 hover:text-primary hover:border-primary/50'}`}
                                     asChild
                                 >
                                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                                        <i className="bi bi-whatsapp mr-2"></i>
-                                        Assinar Agora
+                                        <i className="bi bi-whatsapp mr-2 text-lg"></i>
+                                        Contratar
                                     </a>
                                 </Button>
                             </div>
@@ -290,7 +471,7 @@ const Home = () => {
 
                     <div className="text-center">
                         <Link to="/planos">
-                            <Button variant="outline" size="lg" className="text-lg px-8">
+                            <Button variant="ghost" size="lg" className="text-lg hover:text-primary px-8">
                                 Ver Todos os Planos
                                 <i className="bi bi-arrow-right ml-2"></i>
                             </Button>
@@ -350,8 +531,64 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Área de Cobertura */}
+            <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <span className="text-primary font-semibold text-sm uppercase tracking-wider">Onde Atendemos</span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                            Área de <span className="text-gradient-gold">Cobertura</span>
+                        </h2>
+                        <p className="text-muted-foreground text-lg mb-8">
+                            Atendemos diversos bairros em Araçatuba e estamos sempre expandindo.
+                            <br />
+                            <span className="font-semibold text-primary">Cobertura total de 88% da cidade</span>, incluindo condomínios fechados.
+                        </p>
+
+                        <div className="glass-card rounded-2xl p-8 md:p-12 mb-8 border border-primary/20 bg-primary/5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-left">
+                                {[
+                                    "Moradas dos Nobres",
+                                    "Jardim Algo Azul",
+                                    "Jardim Moreira",
+                                    "Clóvis Valentim Picolotto",
+                                    "Claudionor Cinti",
+                                    "Jussara",
+                                    "Esplanada",
+                                    "Residencial Paquere",
+                                    "Residencial Aimoré",
+                                    "Chácaras Aguiar",
+                                    "Chácaras Osakas",
+                                    "Chácara de Recreio"
+                                ].map((area, idx) => (
+                                    <div key={idx} className="flex items-center gap-2">
+                                        <i className="bi bi-geo-alt-fill text-primary"></i>
+                                        <span className="text-foreground/90 text-sm md:text-base capitalize">{area}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <p className="text-muted-foreground mb-8">
+                            Não encontrou seu bairro? Fale conosco agora mesmo!
+                        </p>
+
+                        <div className="flex justify-center">
+                            <Button variant="hero" size="lg" asChild className="hover-glow">
+                                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                                    <i className="bi bi-whatsapp mr-2"></i>
+                                    Consultar Meu Bairro
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Depoimentos */}
-            <section className="py-20 md:py-28 bg-background">
+            <section className="py-20 md:py-28 bg-muted/30">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-16">
                         <span className="text-primary font-semibold text-sm uppercase tracking-wider">Depoimentos</span>
@@ -365,20 +602,20 @@ const Home = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         <TestimonialCard
-                            name="Maria Silva"
-                            location="Centro"
+                            name="Clarice Rozal"
+                            location="Jardim Moreira"
                             rating={5}
                             text="Incrível! A velocidade é exatamente como prometido. Assisto Netflix em 4K sem travamentos e trabalho de casa sem problemas."
                         />
                         <TestimonialCard
-                            name="João Santos"
-                            location="Jardim Primavera"
+                            name="Gabriel Massaroto"
+                            location="Residencial Paquere"
                             rating={5}
                             text="Melhor internet que já tive! O suporte é rápido e eficiente. Recomendo de olhos fechados para quem quer qualidade."
                         />
                         <TestimonialCard
-                            name="Ana Costa"
-                            location="Vila Nova"
+                            name="Sabino Silva"
+                            location="Moradas dos Nobres"
                             rating={5}
                             text="Mudei para Alternativa há 6 meses e não me arrependo. Atendimento local faz toda a diferença. Nota 10!"
                         />
