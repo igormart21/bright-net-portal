@@ -111,8 +111,9 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-muted-foreground">
                 <i className="bi bi-geo-alt-fill text-primary flex-shrink-0 mt-1"></i>
                 <div>
-                  <div>Rua Principal, 123</div>
-                  <div className="text-xs">Centro - Cidade/UF</div>
+                  <div>Rua Doutor Francisco de Jesus Valois, 303</div>
+                  <div className="text-xs">Moradas dos Nobres - Araçatuba/SP</div>
+                  <div className="text-xs">CEP 16022-140</div>
                 </div>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
